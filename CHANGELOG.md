@@ -56,3 +56,7 @@ O usuário confirmou, pela conversa, que testou com sucesso os sete passos da in
 Esses resultados são **relatos do usuário**, sem capturas de tela ou execução automatizada pelo assistente. O checklist foi atualizado, preservando como pendentes os subcasos não comprovados: entradas inválidas, e-mail duplicado, logout negando acesso, estado vazio e ordem cronológica, cancelamento da exclusão, isolamento de duas contas, desempenho concorrente e itens integrais do Anexo B não fornecido.
 
 O pipeline de GitHub Actions chegou ao estado `success` na revisão `ecf5143b` (testes, typecheck e lint). O projeto Vercel `tarefafacil` apresentou última implantação `READY` na verificação de 2026-11-12. O repositório permanece privado, sem confirmação de acesso ao avaliador.
+
+## 2026-11-12 — Teste manual de isolamento entre contas
+
+O usuário confirmou que criou tarefas em duas contas distintas e verificou que as tarefas de uma conta não aparecem na interface da outra. O isolamento visual no painel foi **aprovado por relato do usuário**. A autorização server-side contra tentativas de acesso direto por URL/API não foi submetida a teste de ataque/integração; permanece pendente no checklist. Não foram coletadas capturas ou logs desse teste manual.
