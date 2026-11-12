@@ -136,3 +136,16 @@ O código entregue neste pacote implementa os sete requisitos funcionais e as pr
 **Diferença em relação ao plano:** a confirmação de exclusão é feita por caixa de diálogo nativa do navegador. O esquema SQL contém também uma restrição `CHECK` para a situação.
 
 **Validação pendente:** não houve publicação pública, testes com credenciais reais, prova de RNF07, checklist completo do Anexo B ou revisão humana documentada. `CHECKLIST.md` contém a lista de verificação necessária. O texto inicial desta spec permanece como histórico do planejamento, e não como afirmação de que o professor já aprovou o projeto.
+
+## 10. Acompanhamento pós-publicação — 12/11/2026
+
+Esta seção atualiza o registro histórico da seção 9, que descrevia a fase inicial de geração do código, **antes** da conexão com as contas do usuário.
+
+- Código versionado em `https://github.com/yLukeNx/TarefaF-cil` (privado na última verificação; é necessário conceder acesso ao professor ou tornar público, com autorização do proprietário).
+- Produção na Vercel em `https://tarefafacil-ylukenxs-projects.vercel.app`, último estado de deploy `READY` observado em 12/11/2026.
+- Neon PostgreSQL criado em São Paulo com tabelas `usuarios` e `tarefas`; credenciais de conexão configuradas como variáveis criptografadas na Vercel.
+- Após falha inicial de autenticação, o login foi corrigido e confirmado pelo usuário. O pipeline automatizado do GitHub chegou a `success`, incluindo verificação TypeScript, testes unitários e lint.
+- O usuário confirmou sete verificações manuais no navegador: criar, listar, editar, concluir, reabrir, reentrar e verificar persistência, excluir uma tarefa. O registro detalhado está em `CHECKLIST.md` e `CHANGELOG.md`.
+- **Ainda pendentes:** subcasos negativos de validação, avaliação por dois usuários separados, análise de desempenho RNF07, confirmação do checklist Anexo B não disponibilizado e revisão humana documentada.
+
+Nenhum passo pendente deve ser tratado como teste aprovado sem realização e registro de evidências.
