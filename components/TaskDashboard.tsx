@@ -11,7 +11,7 @@ export default function TaskDashboard({ name }: { name: string }) {
   try { const res = await fetch("/api/tasks", { cache: "no-store" }); if (!res.ok) throw new Error(); setTasks(await res.json()); setError(""); }
   catch { setError("Não foi possível carregar suas tarefas."); } finally { setLoading(false); }
  }, []);
- useEffect(() => { void load(); }, [load]);
+ useEffect(() => { const timer = window.setTimeout(() => { void load(); }, 0); return () => window.clearTimeout(timer); }, [load]);
  const filtered = useMemo(() => tasks.filter(t => filter === "todas" || t.situacao === filter), [tasks, filter]);
  const done = tasks.filter(t => t.situacao === "concluida").length;
  async function change(url: string, method: string, data?: object) {
