@@ -39,3 +39,12 @@
 - Teste real ponta a ponta de cadastro → login → tarefas → logout com duas contas e persistência no Neon (não executado nesta sessão).
 - Conferência externa do acesso em aba anônima, desempenho com dez usuários e checklist integral do Anexo B da apostila (não fornecida).
 - Revisão humana do código e registro da aprovação pelo estudante/professor. A revisão e execução por IA não substituem revisão humana.
+
+## 2026-11-12 — Correção de autenticação após relato de usuário
+
+- Sintoma observado pelo usuário: cadastro concluído, mas login seguinte rejeitado; o endereço de e-mail permanece indisponível para novo cadastro porque a conta foi efetivamente criada.
+- Verificação no banco: três registros de usuário existentes, todos com campo de senha em formato Argon2id; nenhum hash ou senha foi exposto no relatório.
+- Diagnóstico de código: `loginSchema.strict()` rejeitava campos extras enviados pelo Auth.js Credentials, como `callbackUrl` e `csrfToken`, fazendo o login falhar antes da verificação do hash.
+- Correção `3e65407`: valida email/senha e descarta campos extras, preservando os limites e a normalização de e-mail.
+- Teste de regressão `b4ad189`: cobre login com campos internos adicionais e confere que eles são removidos do resultado validado.
+- Pendente: validação ponta a ponta do login com a conta real no navegador após deploy; não foi necessário apagar nenhuma conta.
