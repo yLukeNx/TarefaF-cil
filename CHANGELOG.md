@@ -48,3 +48,11 @@
 - Correção `3e65407`: valida email/senha e descarta campos extras, preservando os limites e a normalização de e-mail.
 - Teste de regressão `b4ad189`: cobre login com campos internos adicionais e confere que eles são removidos do resultado validado.
 - Pendente: validação ponta a ponta do login com a conta real no navegador após deploy; não foi necessário apagar nenhuma conta.
+
+## 2026-11-12 — Testes manuais de aceitação confirmados pelo usuário
+
+O usuário confirmou, pela conversa, que testou com sucesso os sete passos da interface em produção: criação de uma tarefa com descrição, listagem, edição do título, alteração para concluída, reabertura para pendente, persistência após logout e novo login e exclusão. Também confirmou separadamente que conseguiu entrar na conta depois da correção do Auth.js.
+
+Esses resultados são **relatos do usuário**, sem capturas de tela ou execução automatizada pelo assistente. O checklist foi atualizado, preservando como pendentes os subcasos não comprovados: entradas inválidas, e-mail duplicado, logout negando acesso, estado vazio e ordem cronológica, cancelamento da exclusão, isolamento de duas contas, desempenho concorrente e itens integrais do Anexo B não fornecido.
+
+O pipeline de GitHub Actions chegou ao estado `success` na revisão `ecf5143b` (testes, typecheck e lint). O projeto Vercel `tarefafacil` apresentou última implantação `READY` na verificação de 2026-11-12. O repositório permanece privado, sem confirmação de acesso ao avaliador.
