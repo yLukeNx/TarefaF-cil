@@ -21,7 +21,7 @@
 - [x] CA05: editar tarefa e confirmar persistência após sair e entrar novamente (teste manual informado pelo usuário em 2026-11-12)
 - [x] CA06: concluir e reabrir tarefa (teste manual informado pelo usuário em 2026-11-12)
 - [ ] CA07: exclusão confirmada pelo usuário; teste de cancelar a confirmação ainda pendente
-- [ ] Dois usuários separados: um não vê nem altera tarefas do outro via URL/API
+- [ ] Dois usuários separados: isolamento visual entre contas confirmado manualmente pelo usuário em 2026-11-12; tentativa de acesso direto por URL/API a tarefas da outra conta ainda não testada
 - [ ] Inserir payloads inválidos diretamente na API, sem gravar dados
 - [ ] Testar em tela de 360 px e desktop
 - [ ] Testar em aba anônima, sem instalação
@@ -59,3 +59,10 @@
 - [x] Excluiu a tarefa e confirmou que desapareceu.
 
 **Fonte da evidência:** confirmação expressa do usuário na conversa; não foram coletadas capturas de tela, gravações nem resultados de um executor E2E. Este relato não substitui os cenários adicionais de segurança, validação negativa e isolamento entre usuários.
+
+## Teste de isolamento visual entre contas — 2026-11-12
+
+- [x] Usuário confirmou que duas contas distintas não exibem as tarefas uma da outra no painel, após criar tarefas em ambas e alternar as sessões.
+- [ ] Teste de autorização contra acesso direto a tarefas de outro usuário por URL e API continua pendente.
+
+**Evidência:** confirmação relatada pelo usuário nesta conversa; não houve execução independente de teste E2E nem coleta de capturas de tela.
