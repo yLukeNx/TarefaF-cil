@@ -1,16 +1,16 @@
 # Checklist de entrega e segurança
 
-**Estado inicial: NÃO EXECUTADO.** Preencha `[x]` somente depois de realizar cada teste de verdade. O Anexo B integral da apostila não foi fornecido; confrontar este checklist com o Anexo B antes de entregar.
+**Estado: verificação parcial em 2026-11-12.** `[x]` representa verificação efetivamente feita; os demais itens exigem testes adicionais. O Anexo B integral da apostila não foi fornecido; confrontar este checklist com o Anexo B antes de entregar.
 
 ## Infraestrutura
 
 - [ ] Repositório criado no GitHub e acessível ao professor
-- [ ] Histórico de commits representa etapas reais de revisão e desenvolvimento
-- [ ] Banco Neon criado, conectado e migrado
-- [ ] Variáveis `DATABASE_URL` e `AUTH_SECRET` definidas no ambiente Vercel
-- [ ] Sistema publicado na Vercel via HTTPS
-- [ ] URL do repositório: ___________________
-- [ ] URL da aplicação: ___________________
+- [x] Histórico de commits representa etapas reais de geração, envio e correção (não comprova revisão humana)
+- [x] Banco Neon criado e conectado; tabelas aplicadas e verificadas via SQL (migração Prisma ainda precisa ser baselinada)
+- [x] Variáveis `DATABASE_URL` e `AUTH_SECRET` definidas como criptografadas no ambiente Vercel
+- [x] Build de produção com estado READY na Vercel e domínio HTTPS configurado (acesso anônimo ainda não conferido)
+- [x] URL do repositório: https://github.com/yLukeNx/TarefaF-cil (privado; falta liberar ao professor)
+- [x] URL da aplicação: https://tarefafacil-ylukenxs-projects.vercel.app
 
 ## Fluxo de aceite
 
@@ -41,9 +41,9 @@
 
 ## Qualidade e medição
 
-- [ ] `npm run typecheck` sem erros
-- [ ] `npm test` sem falhas
+- [x] `npm run typecheck` sem erros (GitHub Actions, commit 736dc8d)
+- [x] `npm test` sem falhas (8 testes de validação, GitHub Actions, commit 736dc8d)
 - [ ] `npm run lint` sem erros
-- [ ] `npm run build` bem-sucedido
+- [x] `npm run build` bem-sucedido (Vercel, implantação READY de 2026-11-12)
 - [ ] RNF07: ao menos 95% de consultas concluídas em até 3 s com 10 usuários simultâneos; registrar método e resultados
 - [ ] Revisão humana de código, correções e decisões registradas com evidências no changelog
