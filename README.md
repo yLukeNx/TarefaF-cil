@@ -2,6 +2,16 @@
 
 Gerenciador de tarefas pessoais com interface em português. **Next.js + TypeScript + Auth.js + Prisma + PostgreSQL (Neon)**.
 
+## Projeto publicado (2026-11-12)
+
+- Aplicação: https://tarefafacil-ylukenxs-projects.vercel.app
+- Código e histórico: https://github.com/yLukeNx/TarefaF-cil (repositório privado; liberar acesso ao professor ou tornar público)
+- Banco de produção: Neon PostgreSQL, projeto `tarefafacil`, tabelas `usuarios` e `tarefas` criadas em 12/11/2026.
+- Variáveis sensíveis configuradas como criptografadas na Vercel.
+- Compilação da aplicação na Vercel confirmada. A execução completa dos sete fluxos pelo navegador e o checklist integral de segurança ainda precisam de conferência humana antes da entrega.
+
+**Nota sobre o banco existente:** a estrutura inicial de produção foi aplicada diretamente no Neon usando a SQL da migração. O histórico `_prisma_migrations` não foi inicializado pelo Prisma CLI; antes de executar `prisma migrate deploy` nesse banco, é preciso conciliar/baselinar a migração inicial para evitar erro de tabelas já existentes. Em bancos novos e vazios, o comando de migração do passo 4 continua apropriado.
+
 ## Funcionalidades
 
 Cadastro com validação e hash Argon2id; login/logout; criação, consulta, edição, conclusão/reabertura e exclusão confirmada de tarefas. Todas as operações privadas conferem o usuário autenticado no servidor.
@@ -29,7 +39,7 @@ Cadastro com validação e hash Argon2id; login/logout; criação, consulta, edi
 7. Abra o endereço `https://...vercel.app` numa janela anônima, cadastre dois usuários diferentes e execute os testes do `CHECKLIST.md`.
 8. Registre os resultados verificáveis em `CHANGELOG.md`. Inclua as URLs reais no formulário de entrega.
 
-**Importante:** hospedar não é o mesmo que testar. Sem configurar as contas de GitHub, Neon e Vercel, este pacote ainda não está publicado.
+**Importante:** este projeto já está hospedado, mas hospedar não substitui testar. Execute o checklist em navegador anônimo e documente os resultados.
 
 ## API
 
