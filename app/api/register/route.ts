@@ -1,4 +1,4 @@
-import { hash, Algorithm } from "@node-rs/argon2";
+import { hash } from "@node-rs/argon2";
 import { Prisma } from "@prisma/client";
 import { prisma } from "@/lib/db";
 import { registerSchema } from "@/lib/validation";
@@ -9,7 +9,7 @@ export async function POST(request: Request) {
     const parsed = registerSchema.safeParse(await readJson(request));
     if (!parsed.success) return invalid(parsed.error);
     const { nome, email, senha } = parsed.data;
-    const senhaHash = await hash(senha, { algorithm: Algorithm.Argon2id, memoryCost: 19456, timeCost: 2, parallelism: 1 });
+    const senhaHash = await hash(senha, { memoryCost: 19456, timeCost: 2, parallelism: 1 });
     await prisma.usuario.create({ data: { nome, email, senhaHash } });
     return Response.json({ message: "Conta criada. Entre para continuar." }, { status: 201 });
   } catch (err) {
